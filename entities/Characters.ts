@@ -5,6 +5,7 @@ import {
   ManyToMany,
   BaseEntity,
   JoinTable,
+  InsertValuesMissingError,
 } from "typeorm";
 
 // import {Planet} from "./Planet"
@@ -14,16 +15,22 @@ export class User extends BaseEntity {
   id: number;
 
   @Column()
-  first_name: string;
+  name: string;
 
   @Column()
-  last_name: string;
+  birth_year: string;
 
-  @Column({ unique: true })
-  email: string;
+  @Column()
+  gender: string;
 
-  @Column({ unique: true })
-  password: string;
+  @Column()
+  height: number;
+
+  @Column()
+  skin_color: string;
+
+  @Column()
+  eye_color: string;
 
   // @ManyToMany(() => Planet)
   // @JoinTable()

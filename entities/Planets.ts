@@ -14,16 +14,22 @@ export class User extends BaseEntity {
   id: number;
 
   @Column()
-  first_name: string;
+  name: string;
 
   @Column()
-  last_name: string;
+  climate: string;
 
-  @Column({ unique: true })
-  email: string;
+  @Column()
+  population: number;
 
-  @Column({ unique: true })
-  password: string;
+  @Column()
+  orbital_period: number;
+
+  @Column()
+  rotation_period: number;
+
+  @Column()
+  diameter: number;
 
   // @ManyToMany(() => Planet)
   // @JoinTable()

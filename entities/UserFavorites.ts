@@ -14,16 +14,13 @@ export class User extends BaseEntity {
   id: number;
 
   @Column()
-  first_name: string;
+  user_id: number;
 
   @Column()
-  last_name: string;
+  planet_id?: number;
 
-  @Column({ unique: true })
-  email: string;
-
-  @Column({ unique: true })
-  password: string;
+  @Column()
+  character_id?: number;
 
   // @ManyToMany(() => Planet)
   // @JoinTable()
