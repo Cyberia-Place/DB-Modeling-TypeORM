@@ -6,14 +6,15 @@ import {
   BaseEntity,
   JoinTable,
 } from "typeorm";
+import { User } from "./User";
 
 // import {Planet} from "./Planet"
 @Entity()
-export class User extends BaseEntity {
+export class Planets extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @Column()
@@ -31,7 +32,7 @@ export class User extends BaseEntity {
   @Column()
   diameter: number;
 
-  // @ManyToMany(() => Planet)
-  // @JoinTable()
-  // planets: Planet[];
+  @ManyToMany(() => User)
+  @JoinTable()
+  planet: User[];
 }

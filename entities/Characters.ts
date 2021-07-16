@@ -2,19 +2,19 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  ManyToMany,
   BaseEntity,
   JoinTable,
-  InsertValuesMissingError,
+  ManyToMany,
 } from "typeorm";
 
-// import {Planet} from "./Planet"
+import { User } from "./User";
+
 @Entity()
-export class User extends BaseEntity {
+export class Characters extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @Column()
@@ -32,7 +32,7 @@ export class User extends BaseEntity {
   @Column()
   eye_color: string;
 
-  // @ManyToMany(() => Planet)
-  // @JoinTable()
-  // planets: Planet[];
+  @ManyToMany(() => User)
+  @JoinTable()
+  character: User[];
 }

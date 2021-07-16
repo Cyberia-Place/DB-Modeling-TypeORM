@@ -1,11 +1,4 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  ManyToMany,
-  BaseEntity,
-  JoinTable,
-} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 
 // import {Planet} from "./Planet"
 @Entity()
@@ -24,8 +17,4 @@ export class User extends BaseEntity {
 
   @Column({ unique: true })
   password: string;
-
-  // @ManyToMany(() => Planet)
-  // @JoinTable()
-  // planets: Planet[];
 }
